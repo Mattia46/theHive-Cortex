@@ -1,4 +1,5 @@
 ## The Hive & Cortex
+![cortex](./cortex.png)
 
 #### Requirement
 
