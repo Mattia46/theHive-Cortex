@@ -38,7 +38,7 @@ services:
       - ./elasticsearch/logs:/usr/share/elasticsearch/logs
     networks:
       - Hive
-  
+
   cortex:
     container_name: cortex
     image: thehiveproject/cortex:latest
@@ -53,12 +53,10 @@ services:
       - '/var/run/docker.sock:/var/run/docker.sock'
       - ./cortex/log/:/var/log/cortex
       - /tmp:/tmp
-      #- ./cortex/Cortex-Analyzers:/opt/cortex/analyzers
-      #- .cortex/Cortex-Analyzers/analyzers.json:/opt/cortex/analyzers/analyzers.json
     privileged: true
     networks:
       - Hive
-  
+
   thehive:
     container_name: thehive
     image: 'thehiveproject/thehive4:latest'
@@ -76,7 +74,7 @@ services:
       --cortex-keys ${CORTEX_KEY}
     networks:
       - Hive
-      
+
 networks:
     Hive:
         driver: bridge
